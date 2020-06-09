@@ -1,6 +1,6 @@
 * WEEK-01
 
-** ODEVLER [/]
+** ODEVLER [3/6]
 
    - [ ] Aşağıdaki adreste yer alan "Veri Bilimi ve Yapay Zekaya Giriş" sınavı soruları çözülecek sınav sonuçları teams grubunda paylaşılacak.
          https://gelecegiyazanlar.turkcell.com.tr/konu/veri-bilimi-ve-yapay-zekaya-giris/egitim/101
@@ -12,7 +12,7 @@
          3 Avrupa ülkesini 3 metrik bazında değerlendirip 1 kısa paragraflık yorum yapma (% ler olursa havalı olur). 
          Yorum sonucunda ben gitseydim şu ülkeye giderdim diye belirteceğiz.
 
-   - [ ] Konsoldan Python kodu çalıştırma 
+   - [X] Konsoldan Python kodu çalıştırma 
          adım 1: hi.py isminde python dosyası oluştur 
          adım2: içine msj yaz 
          adım3: terminalden hi.py dizinine git 
@@ -20,9 +20,9 @@
          adım5: teams grubuna screen shot at. 
 
         not: 
-          mac: ls ve cd komutları  windows: dir ve cd komutları  
+          mac: ls ve cd komutları  windows: dir ve cd komutları
 
 
-    - [ ] Kullanıcıdan bilgi alma (input) ve çarpma fonksiyonunu konsol'dan yazdırmak (seçmeli)
+    - [X] Kullanıcıdan bilgi alma (input) ve çarpma fonksiyonunu konsol'dan yazdırmak (seçmeli)
 
-    - [ ] Udemy'den veri yapıları bölümünde yer alan setler bölümü izlenecek.
+    - [X] Udemy'den veri yapıları bölümünde yer alan setler bölümü izlenecek.
