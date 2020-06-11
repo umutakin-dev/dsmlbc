@@ -1,0 +1,1114 @@
+* Data Literacy - Veri Okuryazarligi
+** Veri Okuryazarligi Nedir?
+   Gunluk hayatta veriyle temas ettigimiz ilk anlardaki basit veri yorumlama kabiliyetleridir.
+   Her turden veri tipini, degisken ve olcek turlerini tanimlayabilme, betimsel istatistikleri ve istatistiksel grafikleri kullanarak veri degerlendirebilme yetenegidir.
+   - Veri gorsellestirme
+** Temel Kavramlar
+*** Population and Sample -Populasyon ve Orneklem
+    Populasyon -> Ana Kitle
+    Orneklem   -> Ana Kitle icinden secilen, Ana Kitleyi temsil eden ornek grubu
+    Amac, populasyon icinden, yuksek temsil gucune sahip, yansiz oldugunu dusundugumuz bir orneklem cekmek.
+    Ana Kitle icinden Orneklem cekmek icin kullanilan yontemler:
+    - Tabakali Ornekleme
+    - Rastgele Ornekleme
+    Ornek:
+    - Secim calismalari, 80 milyon kisi icin 2500 kisilik orneklem.
+*** Observation Unit - Gozlem Birimi
+    Arastirmada inceledigimiz birimler.
+    Populasyonun icinden sectigimiz orneklemin her bir elemani, bizim gozlem birimimiz olur.
+    Ornek:
+    - Secim calismasi sirasinda, anket yapilan herkes bir kisi, bir gozlem birimidir.
+    - Incelenen veri tabanindaki her bir satir, bir gozlem birimidir.
+*** Variables and Variable Types - Degiskenler ve Degisken Turleri
+**** Variable - Degisken
+     Birimden birime farkli deger alan niceliktir.
+     Ornek:
+     - Incelenen veri tabanindaki her bir sutun, bir degiskendir.
+**** Variable Types - Degisken Turleri:
+     - Sayisal Degiskenler (Nicel, Kantitatif) (Sayilabilir, Yoruma Acik Olmayan) : Numeric tipteki veriler
+     - Kategorik Degiskenler (Nitel, Kalitatif) (Sinifsal, Yoruma Acik)           : String tipindeki veriler
+     Ornek:
+     - Cinsiyet bir kategorik degiskendir; Kadin ve Erkek bu kategorik degiskenin siniflaridir.
+*** Olcek Turleri
+    Bir degiskenin degerlerini insan olarak okuyup anlayabilmek icin, bunlari olcmemiz gerekiyor.
+    - Sayisal Degiskenler icin  : Aralik ve Oran
+    - Katagorik Degiskenler icin: Nominal ve Ordinal
+**** Aralik Oran (Sayisal Degiskenler):
+     - Aralik: Baslangic noktasi sifir olmayan sayisal degiskenlerin olcek turu.
+       - orn;
+         - Sicaklik
+     - Oran: Baslangic noktasini sifir kabul eden sayisal degiskenlerin olcu turlerine denir.
+       - orn;
+	 - Arac Fiyati: 0-50k, KM: 0-100k
+**** Nominal Ordinal (Kategorik Degiskenler):
+     - Nominal
+       Kategorik degiskenlerin, siniflari arasinda bir fark yok ise, buna nominal olcek turu diyoruz.
+       - orn;
+	 - Cinsiyet; Kadin, Erkek
+     - Ordinal
+       Siniflar arasinda fark olmasi durumundaki olcu turune ise ordinal olcu turu diyoruz.
+       Kategorik degiskenin siniflari arasinda bir mesafe olmasi gerektigi durumlarda, bu mesafenin ifade edilmesi icin, bu kategorik degiskenin, olcek turu, ordinal olcek turu olacaktir.
+       - orn;
+	 - Rutbe; Onbasi, Yuzbasi, Binbasi, Albay
+	 - Egitim Durumu; Ilkokul, Ortaokul, Lise, Lisans, Yuksek Lisans, Doktora
+**** Ozet:
+     - Veri
+       - Kategorik
+	 - Nominal
+         - Ordinal
+       - Sayisal
+	 - Aralik (Interval)
+	 - Oran (Ratio)
+** Merkezi Egilim Olculeri
+*** Arithmetic Mean - Aritmetik Ortalama
+    Bir seride (degiskende) yer alan tum degerlerin toplanmasi ve birim sayisina bolunmesi ile elde edilen istatistiktir.
+    - orn;
+      - 13, 10, 15, 12, 17, 13
+        (13 + 10 + 15 + 12 + 17 + 13) / 6 = 13,33
+      - butun kullanicilarin bir sitede gecirdikleri sure / kullanici sayisi = ortalama gecirilen sure
+*** Median - Medyan
+    Bir seriyi kucukten buyuge ve ya buyukten kucuge siraladigimizda tam orta noktadan seriyi iki esit parcaya ayiran degere medyan adi verilir.
+    Terim sayisi:
+    - Tek ise  => Medyan = ((n+1)/2).terim
+    - Cift ise => Medyan = (((n/2).terim+((n/2+1).terim)/2
+    - orn;
+      - 13, 10, 15, 12, 17
+        10, 12, 13, 15, 17
+        Medyan = (n+1)/2 = (5+1)/2 = 3 -> = 13
+      - 13, 10, 15, 12, 17, 13
+        10, 12, 13, 13, 15, 17
+        Medyan = (((n/2).terim+((n/2+1).terim)/2
+               = (3.terim+4.terim)/2
+               = (13 + 13) / 2 = 26 / 2 = 13
+*** Medyan ve Ortalama Karsilastirmasi
+    Aritmetik Ortalama, seri dagiliminin (degiskenin dagiliminin) simetrik oldugu bilindiginde kullanilabilir, aksi takdirde medyan kullanilabilir.
+    - orn;
+      - 13, 10, 15, 12, 17, 12, 19, 18, 11, 12, 190
+	Ortalama = 28,5
+	Medyan   = 13
+	Boyle bir veri kumesi ile calisirken, medyan kullanilmalidir, cunku veri kumesi simetrik degildir. Ortalama degeri olan 28,5 alinsa bile, veri kumesinin icinde bu degere yakin hicbir eleman yoktur.
+*** Mode - Mod
+    Bir seride (degiskende) en cok tekrar eden (frekansi en cok olan)  degere Mod adi verilir.
+    - orn;
+      - 13, 10, 13, 12, 17, 13, 14
+	10 -> 1
+        12 -> 1
+        13 -> 3 -> Mod = 13
+        14 -> 1
+        17 -> 1
+*** Quantilles - Kartiller
+    Kucukten buyuge siralana bir seriyi dort parcaya ayiran degerlere kartiller denir.
+    Q1 = (1/4(n+1)).terim
+    Q3 = (3/4(n1+)).terim
+    Q2 = (Q3 Q1)*2
+    - orn;
+      - 8, 10, 15, 12, 17, 20, 14
+	8, 10, 12, 14, 15, 17, 20
+	Q1 -> (1/4(7+1)).terim = (1/4*8).terim = 2.terim = 10
+        Q3 -> (3/4(n1+)).terim = (3/4*8).terim = 6.terim = 17	
+        Q2 -> (17-10)*2 = 7*2 = 14
+*** Merkezi Egilimin Onemini Kavrama
+    1. Temsil Yonunu Kavramak
+    2. Dogru Kullanilmasi
+    * Ortalama ve Medyan degerlerinin birbirine yakin olmasi, bu dagilimin duzgun, homojen oldugunu gosterir.
+** Dagilim Olculeri
+   Elimizdeki degiskenin degerlerinin ne sekilde dagildigini ifade eden olculerdir.
+   Maksimum, minumum ve ya ortalam etrafindaki durumunun ne oldugu anlamaya calismak amaciyla kullanilan olculerdir.
+*** Range - Degisik Araligi
+    Bir serideki maksimum degerden, minumum degeri cikardigimizda elde ettigimiz degerdir.
+    Degisim Araligi = Max - Min
+    - orn;
+      - 8, 10, 15, 12, 17, 20, 14
+        Degisim Araligi = 20 - 8 = 12
+*** Standard Deviation - Standart Sapma
+    Ortalamadan olan sapmalarin genel bir olcusudur.
+    s = sqrt(1/n sum(n, i=1, (xi-mean(x))^2)
+    - orn;
+      12, 15, 20, 30, 45, 22
+      Ortalama = (12 + 15 + 20 + 30 + 45 + 22) / 6 = 24
+      |-------------+----------------+------------------|
+      | Kazanc (xi) | (xi - mean(x)) | (xi - mean(x))^2 |
+      |-------------+----------------+------------------|
+      |          12 | (12-24) = -12  |              144 |
+      |          15 | (15-24) = -9   |               81 |
+      |          20 | (20-24) = -4   |               16 |
+      |          30 | (30-24) = 6    |               36 |
+      |          45 | (45-24) = 21   |              441 |
+      |          22 | (22-24) = -2   |                4 |
+      |-------------+----------------+------------------|
+      |      Toplam | 0              |              722 |
+      |-------------+----------------+------------------|
+      s = sqrt(1/6 * 722) = 10,97
+*** Variance - Varyans
+    Standart sapmanin karesidir. (Ortalamadan olan sapmalarin karelerinin toplamidir.
+    s   = sqrt(1/n sum(n, i=1, (xi-mean(x))^2)
+    s^2 = 1/n sum(n, i=1, (xi - mean(x))^2)
+    - orn;
+      12, 15, 20, 30, 45, 22
+      Ortalama = (12 + 15 + 20 + 30 + 45 + 22) / 6 = 24
+      |-------------+----------------+------------------|
+      | Kazanc (xi) | (xi - mean(x)) | (xi - mean(x))^2 |
+      |-------------+----------------+------------------|
+      |          12 | (12-24) = -12  |              144 |
+      |          15 | (15-24) = -9   |               81 |
+      |          20 | (20-24) = -4   |               16 |
+      |          30 | (30-24) = 6    |               36 |
+      |          45 | (45-24) = 21   |              441 |
+      |          22 | (22-24) = -2   |                4 |
+      |-------------+----------------+------------------|
+      |      Toplam | 0              |              722 |
+      |-------------+----------------+------------------|
+      s^2 = 1/6 * 722 = 120,34
+*** Skewness - Carpiklik
+    Carpiklik bir degiskenin dagiliminin simetrik olamayisidir.
+    (negatif carpik, pozitif carpik)
+    Carpiklik oldugu durumlarda, merkezi egilim olcusu olarak, medyan kullanilmasi dogrudur.
+    Pearson Carpiklik Katsayisi (PCK) = ( 3 * ( mean(x) - medyan ) ) / standart sapma
+    PCK < 0 -> Negatif Carpik (soldan)
+    PCK > 0 -> Pozitif Carpik (sagdan)
+    PCK = 0 -> Simetrik
+    - orn;
+      12, 15, 20, 30, 45, 22
+      Ortalama = (12 + 15 + 20 + 30 + 45 + 22) / 6 = 24
+      Medyan   => 12, 15, 20, 22, 30, 45 => (20+22)/ = 21
+      s = 10,97
+      |-------------+----------------+------------------|
+      | Kazanc (xi) | (xi - mean(x)) | (xi - mean(x))^2 |
+      |-------------+----------------+------------------|
+      |          12 | (12-24) = -12  |              144 |
+      |          15 | (15-24) = -9   |               81 |
+      |          20 | (20-24) = -4   |               16 |
+      |          30 | (30-24) = 6    |               36 |
+      |          45 | (45-24) = 21   |              441 |
+      |          22 | (22-24) = -2   |                4 |
+      |-------------+----------------+------------------|
+      |      Toplam | 0              |              722 |
+      |-------------+----------------+------------------|
+      PCK = ( 3 * ( mean(x) - medyan ) ) / standart sapma
+          = ( 3 * ( 24 - 21 ) ) / 10,97
+          = ( 3 * 3 ) / 10,97
+          = 9 / 10,97
+          = 0,82 -> simetrik degildir, pozitif carpiktir (deger 1'e yakin oldugu icin yuksek saga carpiktir)
+*** Kurtosis - Basiklik
+    Dagilimin basikligini/sivriligini gosterir.
+    Basiklik Katsayisi (BK) = m4 / s^4
+    ( m4 -> ortalamaya gore 4. moment -> sum(n, i=1, (xi - mean(x))^4 ) / n )
+    BK = 3 ise dagilim standart normal dagilima uygundur
+    BK > 3 ise dagilim sivridir
+    BK < 3 ise dagilim basiktir
+    - orn;
+      12, 15, 20, 30, 45, 22
+      Ortalama = (12 + 15 + 20 + 30 + 45 + 22) / 6 = 24
+      Medyan   => 12, 15, 20, 22, 30, 45 => (20+22)/ = 21
+      s = 10,97
+      |-------------+----------------+------------------|
+      | Kazanc (xi) | (xi - mean(x)) | (xi - mean(x))^4 |
+      |-------------+----------------+------------------|
+      |          12 | (12-24) = -12  |            20736 |
+      |          15 | (15-24) = -9   |             6561 |
+      |          20 | (20-24) = -4   |              256 |
+      |          30 | (30-24) = 6    |             1296 |
+      |          45 | (45-24) = 21   |           194482 |
+      |          22 | (22-24) = -2   |               16 |
+      |-------------+----------------+------------------|
+      |      Toplam | 0              |           223346 |
+      |-------------+----------------+------------------|
+      m4  = 223346 / 6 = 37224,33
+      s^4 = (10,97)^4  = 14481,93
+      BK  = m4 / s^4   = 37224,33 / 14481,93 = 2,57 
+          2,57 < 3 -> Dagilim basiktir.
+** Istatistiksel Dusunce Modelleri - Statistical Thinking Models
+   Veri okuryazarligindan veri analitigine giden yolu modelleyen yol gostericilerdir.
+   Genel amaci: Bir bireyin, veriye ilk dokundugu andan, son asamasi olan veri ile ilgili yorumlar yapabilme, cikarimlarda bulunabilme sureclerini modelleyen teorik calismalardir.
+   - Ben-Zvi ve Friedlander (1997)
+     Jones ve digerleri (2000)
+   - Wild ve Pfannkuch (1999)
+     Hoerl ve Snee (2001)
+   - Mooney (2002)
+     - Verinin Tanimlanmasi
+       Temel Kavramlar, Merkezi Egilim Olculeri, Dagilim Olculeri vs.
+     - Verinin Organize Edilmesi ve Indirgenmesi
+       Veriyi belirli islemlerden gecirme vs.
+     - Veri Gosterimi
+       Veriyi gorsellestirme, Istatistiksel Grafik Yorumlama vb.
+     - Verinin Analiz Edilmesi ve Yorumlanmasi
+     - Seviyeler:
+       - Kisiye Ozguluk (1. Seviye)
+	 Veri Okuryazaliginin olmadigi, yorumlamanin yapilamadigi seviye
+       - Gecici (2. Seviye)
+	 Nicel dusunmenin oneminin farkedilmeye baslandigi seviye, merkezi egilim olculeri yorumlanmaya baslaniyor, hatalar yapilabiliyor.
+	 Veri analizi icin, veri temsiline donuk baglantilarin cok fazla kurulamadi seviye.
+       - Nicel (3. Seviye)
+	 Merkezi Egilim olculeri ve Dagilim olculeri dogru bir sekilde anlasilmaya baslaniyor. Istatistiksel kararlar alabilmek icin bu nicel veriler kullanilmaya baslaniyor. Baglar ve verinin ikisininde bilincinde olunmasi ve bu kavramlar arasinda ufak ufak iliskiler kurulmaya baslandigi seviye.
+       - Analitik (4. Seviye)
+	 Veriyi inceleme, yorumlama ve analiz etmede tam olarak analitik yaklasimlar kullanilmaya baslaniyor. Ortalama nedir, medyan nedir, farklari nedir, standart sapma nedir, varyans nedir, gercek hayatta neler ile ortustugu, nelere karsilik geldigi bilinebilir bir hale geliyor. Veri ve baglam arasinda iliski kurulabiliyor ve bu iliskiye dayir kanitlar gosterilebiliyor.
+     
+* Python
+** Neden Python?
+   - Buyuk sirketlerin kullandigi bir programlama dili
+   - Veri Bilimi ve Yapay Zeka alaninda en cok tercih edilen dillerden birisidir.
+   - Yorumlayicidir.
+   - Etkilesimlidir.
+   - High level (yuksek seviye) bir programlama dilidir.
+   - OOP ve FP ozellikleri ile kullanilabilmektedir.
+** Functions
+*** print()
+    - print(arg1, arg2, sep = "_") => override the default separator
+*** type()
+*** len()
+*** upper()
+*** lower()
+*** isupper()
+*** islower()
+*** replace()
+*** strip()
+*** dir()
+*** capitalize()
+*** title()
+*** input()
+*** int()
+*** float()
+*** str()
+*** del
+*** append()
+*** remove()
+*** insert()
+*** pop()
+*** count()
+*** copy()
+*** extend()
+*** index()
+*** reverse()
+*** sort()
+*** clear()
+*** ?function_name
+** Data Types
+*** List
+    - Degistirilebilir
+    - Sirali
+    - Kapsayici
+*** Tuple
+    - Degistirilemez
+    - Sirali
+    - Kapsayici
+*** Dictionary
+    - Degistirilebilen
+    - Sirasiz
+    - Kapsayici
+*** Sets
+    - Sirasiz
+    - Degerleri essizdir
+    - Degistirilebilir
+    - Farkli tipleri barindirabilir
+** Functional
+*** lambda
+    - lambda x: x...
+*** map
+*** filter
+*** reduce
+* Numpy
+   - Numerical Python
+   - Bilimsel hesaplamalar icin kullanilir.
+   - Arrayler / cok boyutlu arrayler ve matrisler uzerinde yuksek performansli calisma imkani saglar.
+   - Temelleri 1995 te (matrix-sig, guido van rossum) atilmis, nihai olarak 2005 (travis oliphant) yilinda hayata gecmis.
+   - Listelere benzerdir, farki; verimli veri saklama ve vektoral operasyonlardir.
+*** Functions
+**** .zeroes()
+**** .ones()
+**** .full()
+**** .arange()
+**** .linspace()
+**** .random
+***** .random.normal()
+***** .random.randint()
+**** .eye()
+**** .ndim
+**** .shape
+**** .size
+**** .dtype
+**** .reshape()
+**** .newaxis
+**** .concatenate()
+**** .vstack() -> Vertical Stack
+**** .hstack() -> Horizontan Stack
+**** .split()
+**** .vsplit()
+**** .hsplit()
+**** .sort()
+**** .copy()
+**** .sum()
+**** .all()
+**** .any()
+**** .func(, axis = 0/1)
+     - axis = 0 -> column
+     - axis = 1 -> row
+**** .add()
+**** .subtract()
+**** .multiply()
+**** .divide()
+**** .power()
+**** .reduce()
+**** .accumulate()
+**** .mean()
+**** .std()
+**** .var()
+**** .median()
+**** .min()
+**** .max()
+*** Indexing
+    - Basit Index
+    - Slicing
+    - Fancy Index
+*** Broadcasting
+    - Eger iki array boyut sayisi olarak birbirinden farkli ise boyutu az olanin boyunuta 1 ekleyerek boyutu cogalt.
+    - Eger eslesmeyen boyut sayisi varsa 1 olan boyutu diger arrayin boyutuna esitle.
+    - Hala uyusmazlik varsa hata uret.
+* Pandas
+   - Panel Data
+   - Veri manupulasyonu ve veri analizi icin yazilmis acik kaynak kodlu bir python kutuphanesidir
+   - Ekonometrik ve finansal calismalar icin dogmustur
+   - Temeli 2008 yilinda atilmistir.
+   - R DataFrame yapisini python dunyasina tasimis ve DataFrameler uzerinde hizli ve etkili calisabilme imkani saglamistir.
+   - Bir cok farkli veri tipini okuma ve yazma imkani saglar
+   - Pandas NumPy in alternatifi degil NumPy in ozelliklerini kullanan ve bunlari genisleten bir kutuphanesidir.
+*** Functions
+    import pandas as pd
+**** .axes
+     seri = pd.Series([1,2,3,4])
+     seri.axes
+**** .dtype
+     seri = pd.Series([1,2,3,4])
+     seri.dtype
+**** .empty
+     seri = pd.Series([1,2,3,4])
+     seri.empty
+**** .ndim
+     seri = pd.Series([1,2,3,4])
+     seri.ndim
+**** .size
+     seri = pd.Series([1,2,3,4])
+     seri.size
+**** .values
+     seri = pd.Series([1,2,3,4])
+     seri.values
+**** .head()
+     seri = pd.Series([1,2,3,4])
+     seri.head(2)
+**** .tail()
+     seri = pd.Series([1,2,3,4])
+     seri.tail(2)
+**** .index
+     seri = pd.Series([1,2,3,4])
+     seri.index
+**** .concat()
+     seri = pd.Series([1,2,3,4])
+     pd.concat([seri, seri])
+**** .append()
+     seri = pd.Series([1,2,3,4])
+     seri.append(seri)
+**** .index
+     seri.index
+**** .keys
+     seri.keys
+**** list()
+     list(seri.item())
+**** .loc[]
+     Bir seride, girdigimiz indexler ile islem yapmak istedigimizde kullanabiliriz.
+     data = nd.Series(['a', 'b', 'c'], index = [1, 3, 5])
+     data[0]       -> ERROR
+     data[1]       -> 'a'
+     data[1:3]     -> 3 'b'
+                      5 'c'
+     data.loc[1]   -> 'a'
+     data.loc[0:1] -> 1 'a'
+     data.loc[0:2] -> 1 'a'
+     data.loc[0:3] -> 1 'a'
+                      3 'b'
+     data.loc[0:4] -> 1 'a'
+                      3 'b'
+**** .iloc[]
+     index i her zaman sifirdan baslatir
+     data = nd.Series(['a', 'b', 'c'], index = [1, 3, 5])
+     data.iloc[0] = 'a'
+     data.iloc[0:3] = 1 'a'
+                      3 'b'
+                      5 'c'
+*** .Series
+     pd.Series([1,2,3,4])
+**** index
+      pd.Series([1,5,0.9,34], index = [1,3,5,7])
+*** .Dataframe()
+    import pandas as pd
+    --------------------------------------------------
+    df = pd.DataFrame(l, columns = ['degisken_ismi'])
+    --------------------------------------------------
+    df = pd.DataFrame(m, columns = ['var1', 'var2', 'var3'], index = ['a', 'b', 'c']
+    --------------------------------------------------
+    pd.DataFrame(pd.Series([1,2,3,4]), columns = ['col1'])
+    --------------------------------------------------
+    bir = pd.Series([1,2,3,4])
+    iki = pd.Series([1,2,3,4])
+    pd.DataFrame({'degisken1': bir,
+                  'degisken2': iki})
+    --------------------------------------------------
+    sozluk = {"reg" : { "RMSE": 10,
+                        "MSE": 11,
+                        "SSE": 90},
+              "loj" : { "RMSE": 10,
+                        "MSE": 11,
+                        "SSE": 90},
+              "cart": { "RMSE": 10,
+                        "MSE": 11,
+                        "SSE": 90}}
+    pd.DataFrame(sozluk)
+    --------------------------------------------------
+    s1 = np.random.randint(10, size = 5)
+    s2 = np.random.randint(10, size = 5)
+    s3 = np.random.randint(10, size = 5)
+    --------------------------------------------------
+    df = pd.DataFrame({"var1": s1, "var2": s2, "var3": s3})
+    --------------------------------------------------
+    df.index = ["a", "b", "c", "d", "e" ]
+    df.iloc["c":"d", "var2":"var3" -> HATA
+    Bu calismaz, cunku iloc numeric index alir.
+    Calismasi icin ayni islem .loc ile yapilabilir.
+    df.loc["c":"d", "var2":"var3"
+    Bu calisiyor cunku .loc dataframe in sahip oldugu index ler uzerinde slicing yapiyor.
+    --------------------------------------------------
+**** .columns
+     Rename initially assigned column names
+     df.columns = ('col1', 'col2', 'col3')    
+**** .drop
+     Girilen satisi siler ve silinmis DataFrame i doner, gercekten silme islemi yapmaz.
+     df.drop('a', axis = 0)
+     --------------------------------------------------
+     Eger argumanlarda inplace kullanilmissa, islem kalici hale gelir.
+     df.drop('a', axis = 0, inplace = True)
+     Bu islem a index inde ki satisi siler.
+    --------------------------------------------------
+     l = ["b", "c"]
+     df.drop(l, axis = 0)
+    --------------------------------------------------
+**** .concat
+     pd.concat([df1, df2])
+     pd.concat([df1, df2], axis = 1)
+     pd.concat([df1, df2], ignore_index = True)
+     --------------------------------------------------
+     df1 ve df2 birbirinden farkli sutun yapilari olan dataframeler olsun
+     Eger bu iki dataframe i birlestirirsek, birbirlerinde eksik olan sutun lar NaN olarak kesisime eklenecektir.
+     pd.concat([df1, df2])
+     Sadece kesisen degerlerin birlesimi
+     pd.concat([df1, df2], join  = 'inner')
+     --------------------------------------------------
+     pd.concat([df1, df2], join_axes = [df1.columns])
+     join_axes diye bir argument bulamadigi icin calismiyor.!!!
+     --------------------------------------------------
+**** .merge
+     --------------------------------------------------
+     one-to-one, many-to-one ya da many-to-many birlestirme islemleri yapilabiliyor
+     pd.merge(df1, df2)
+     pd.merge(df1, df2, on = 'calisanlar')
+     --------------------------------------------------
+     birlestirilen tablolarin ortak isimli bir kolonu yoksa,
+     birlestirilecek kolon isimleri her iki dataframe icinde ayri ayri verilir.
+     pd.merge(df1, df3, left_on = 'calisanlar', right_on = 'name')
+     bu islemde calisanlar ve name isimli kolonlar ayni verileri icerdigi icin, bir tanesini silmek istersek
+     pd.merge(df1, df3, left_on = 'calisanlar', right_on = 'name').drop('name', axis = 1)
+     --------------------------------------------------
+     iki dataframe arasinda, indexler uzerinden birlestirme yapmak icin kullanilir.
+     bu durumda, sutun isimleri uzerinden birlestirme yaptigimizda oldugu gibi, ayni verileri iceren baska bir kolon eklenmez.
+     pd.merge(df1a, df2a, left_index = True, right_index = True )
+     --------------------------------------------------
+     overlapping
+     birlestirilen iki dataframe in ilk sutunlari haric baska sutunlarida kesisiyorsa karsilasilan sorunlar
+     dfa = pd.DataFrame({'calisanlar': ['ali', 'veli', 'ayse', 'fatma'],
+                    'siralama'  : [1, 2,3,4]})
+     dfb = pd.DataFrame({'calisanlar': ['ali', 'veli', 'ayse', 'fatma'],
+                    'siralama'  : [3, 1, 4,2]})
+     pd.merge(dfa, dfb, on = 'calisanlar')
+         	calisanlar 	siralama_x 	siralama_y
+     0 	        ali 	        1 	        3
+     1 	        veli 	        2 	        1
+     2 	        ayse 	        3  	        4
+     3 	        fatma 	        4  	        2
+     siralama_x ve siralama_y kolonlari olmasi istenmeyen bir durum olabilir.
+     pd.merge(dfa, dfb, on = 'calisanlar', suffixes = ["_maas", "_deneyim"])
+     _maas ve _deneyim, pandas in otomatik olarak atadigi _x ve _y eklentilerinin yerine geciyor.
+      	calisanlar 	siralama_maas 	siralama_deneyim
+     0 	ali 	        1 	        3
+     1 	veli 	        2 	        1
+     2 	ayse 	        3 	        4
+     3 	fatma 	        4 	        2
+     --------------------------------------------------
+**** .join
+     df1a.join(df2a)
+**** .set_index()
+     bir dataframe in bir kolonunu, index haline getirmek icin kullanabiliriz.
+     df1.set_index('column_name')
+**** Toplulastirma Fonksiyonlari
+     import seaborn as sns
+     df = sns.load_dataset("planets")
+***** .describe()
+      alttaki butun fonksiyonlari calistirip, sonuclarini bir tablo olarak gosterir.
+      df.describe()
+     --------------------------------------------------
+      df.describe().T -> Transpose unu al: sutunlar ve satirlari yer degistirir.
+      df.dropna.describe().T
+     --------------------------------------------------
+      veri setinin icide olmayan degeleri dikakte almayip, sonuclari ona gore gosterir.
+      df.dropna.describe().T
+     --------------------------------------------------
+***** .count()
+***** .first()
+***** .last()
+***** .mean()
+      df.mean()
+      df["mass"].mean()
+***** .median()
+***** .min()
+***** .max()
+***** .std()
+***** .var()
+***** .sum()
+**** Grouping
+     df = pd.DataFrame({'gruplar': ['a', 'b', 'c', 'a', 'b', 'c'],
+                        'veri'   : [10, 11, 52, 23, 43, 55]}, 
+                       columns = ['gruplar', 'veri'])
+     df.groupby("gruplar"
+     --------------------------------------------------
+     bu fonksiyon tek basina bir islem yapmiyor.
+     gruplama fonksiyonlarini aggregate fonksiyonlari ile beraber kullanmamiz gerekiyor.
+     df.groupby("grupler").mean()
+     --------------------------------------------------
+     daha karmasik, cok degisken(sutun) iceren veri setlerinde degisken(sutun) bilgisinide vermek gerekir.
+     df = sns.load_dataset("planets")
+     df.groupby("method")["orbital_period"].mean()
+     df.groupby("method")["orbital_period"].describe()
+     --------------------------------------------------
+     
+**** .aggregate()
+     df = pd.DataFrame({"gruplar"  : ["a", "b", "c", "a", "b", "c"],
+                        "degisken1": [10, 23, 33, 22, 11, 99],
+                        "degisken2": [100, 253, 333, 262, 111, 969]},
+                       columns = ["gruplar", "degisken1", "degisken2"])
+     --------------------------------------------------
+     df.groupby("gruplar").aggregate(["min", np.median, max])
+     df.groupby("gruplar").aggregate([min, np.median, max])
+     df.groupby("gruplar").aggregate(["min", np.median, "max"])
+     pandas disi fonksiyonlari tirnaksiz olarak cagirmak gerekiyor fakat pandas in fonksiyonlarini tirnakli ya da tirnaksiz
+     cagirabiliriz. aralarindaki farki anlamak icin tirnakla cagirmak daha iyi olabilir.
+     --------------------------------------------------
+     degiskenlere ayri ayri islemler yapmak istiyorsak
+     df.groupby("gruplar").aggregate({"degisken1": "min", "degisken2": "max"})
+     --------------------------------------------------
+**** .filter()
+     oncelikle filtreleme isleminde kullanilacak bir fonksiyon tanimlanir.
+     df = pd.DataFrame({"gruplar"  : ["a", "b", "c", "a", "b", "c"],
+                        "degisken1": [10, 23, 33, 22, 11, 99],
+                        "degisken2": [100, 253, 333, 262, 111, 969]},
+                       columns = ["gruplar", "degisken1", "degisken2"])
+     def filter_func(x):
+         return x["degisken1"].std() > 9
+     df.groupby("gruplar").filter(filter_func)
+**** .transform()
+     df = pd.DataFrame({"gruplar"  : ["a", "b", "c", "a", "b", "c"],
+                        "degisken1": [10, 23, 33, 22, 11, 99],
+                        "degisken2": [100, 253, 333, 262, 111, 969]},
+                       columns = ["gruplar", "degisken1", "degisken2"])
+     df.transform(lambda x: x - x.mean())
+     hata uretir cunku degiskenler icinde numeric olmayan degisken var, "gruplar"
+     df_a = df.iloc[:,1:3]
+     df_a.transform(lambda x: x - x.mean())
+     df_a.transform(lambda x: (x - x.mean()) / x.std())
+**** .apply()
+     import numpy as np
+     import pandas as pd
+     --------------------------------------------------
+     df = pd.DataFrame({"degisken1": [10, 23, 33, 22, 11, 99],
+                        "degisken2": [100, 253, 333, 262, 111, 969]},
+                       columns = ["degisken1", "degisken2"])
+     df.apply(np.sum)
+     df.apply(np.mean)
+     --------------------------------------------------
+     df = pd.DataFrame({"gruplar"  : ["a", "b", "c", "a", "b", "c"],
+                        "degisken1": [10, 23, 33, 22, 11, 99],
+                        "degisken2": [100, 253, 333, 262, 111, 969]},
+                       columns = ["gruplar", "degisken1", "degisken2"])
+     df.groupby("gruplar").apply(np.sum)
+     --------------------------------------------------
+*** Pivot
+    import pandas as pd
+    import seaborn as sns
+    --------------------------------------------------
+    titanic = sns.load_dataset("titanic")
+    --------------------------------------------------
+    Pivot kullanmadan, groupby ile ilkel bir pivot tablo olusturmak
+    titanic.groupby("sex")["survived"].mean()
+    titanic.groupby(["sex", "class"])["survived"].aggregate("mean").unstack()
+    --------------------------------------------------
+    Yukarida islemin aynisi, bu sefer .pivot_table() kullanarak
+    titanic.pivot_table("survived", index = "sex", columns = "class")
+    --------------------------------------------------
+    age = pd.cut(titanic["age"], [10, 18, 90] )
+    bu kod iki kategori olusturur, 10-18 yas araliginda ve 18-90 yas araliginda.
+
+    titanic.pivot_table("survived", ["sex", age], "class")
+
+     	        class 	 First 	  Second   Third
+    sex 	age 			
+    female 	(10, 18] 1.000000 1.000000 0.523810
+                (18, 90] 0.972973 0.900000 0.423729
+    male 	(10, 18] 0.666667 0.000000 0.103448
+                (18, 90] 0.375000 0.071429 0.133663
+		
+    bu kod, "class" degiskeni altindaki turlerden sutunlari olusturur.
+            "sex" degiskeni ve age olarak onceden hesapladigimiz dataframe den satir basliklarini olusturur.
+	    daha sonra titanic tablosundaki butun satirlar icin "survived" degiskeni altindaki degerler ile islem yapar.
+    --------------------------------------------------
+    
+*** Read External DataSets
+    import pandas as pd
+    --------------------------------------------------
+    cvs
+    pd.read_csv("reading_data/ornekcsv.csv")
+    pd.read_csv("reading_data/ornekcsv.csv", sep = ";")
+    --------------------------------------------------
+    txt
+    pd.read_csv("reading_data/duz_metin.txt")
+    --------------------------------------------------
+    excel
+    pd.read_excel("reading_data/ornekx.xlsx")
+    --------------------------------------------------
+* Python ile Veri Gorsellestirme - Data Visualization
+  - Buyuk resmi gormek ve veriyi temsil etmek
+  - veriye ilk bakis
+  - kategorik degisken ozetleri
+  - surekli degisken ozetleri
+  - dagilim grafikleri
+  - korelasyon grafikleri
+  - cizgi grafikler
+  - zaman serisi grafikleri
+** buyuk resmi gormek ve veriyi temsil etmek
+   basit bir grafik, veri analistinin zihnine diger herhangi bir cihazdan daha fazla bilgi getirir. - john tukey
+*** Kesifci veri analizi
+    betimsel istatistikler, veri gorsellestirme teknikleri ve is ciktisi hedefiyle veri uzerinde calismaktir.
+    veri bilimcinin ozgurce calisabildigi, soz konusu olmayan yeni bulgulara ulasabilecegi, yeni is fikirleri,
+    yeni ise yarar sonuclara ulasabilecegi, sorular sorarak, hipotezler kurarak ilerledigi surectir.
+** python ile veri gorsellestirme
+   veri gorsellestirmek icin kullanabilecegimiz python kutuphaneleri
+   - matplotlib
+   - pandas
+   - seaborn
+   - ggplot **
+   - Bokeh
+   - Plot.ly
+   veri setlerindeki degisken tipleri
+   - kategorik degiskenler
+   - surekli degiskenler
+*** seaborn
+    import seaborn as sns
+    planets = sns.load_dataset("planets")
+    --------------------------------------------------
+    oncelikle veri setini yedekleyelim. orjinal uzerinde calismayalim.
+    df = planets.copy()
+    veri setini yapisal bilgileri
+    df.info()
+    df.dtypes - method: object
+    veri setini kategorik degiskene donusturmek
+    bu her zaman olmasada, bazi ozel fonksiyonlarin veriseti uzerinde duzgun bir sekilde calismasini saglamak icin onemli.
+    df.method = pd.Categorical(df.method)
+    df.dtypes - method: category
+    --------------------------------------------------
+    veri setinin betimlenmesi
+    df.shape
+    df.columns
+    df.describe()
+    df.descrube().T
+    --------------------------------------------------
+    eksik degerlerin incelenmesi
+    df.isnull().values.any()
+    df.isnull().sum()
+    eksik veri icinde bos olan degerlerin doldurulmasi
+    df["orbital_period"].fillna(0, inplace = True)
+    df["mass"].fillna(df.mass.mean(), inplace = True)
+    df.fillna(df.mean(), inplace = True)
+    --------------------------------------------------
+    kategorik degisken ozetleri
+    sadece kategorik degiskenler ve ozetleri
+    kat_df = df.select_dtypes(include = ["object"])
+    df.method = pd.Categorical(df.method)
+    kat_df = df.select_dtypes(include = ["category"])
+    kategorik degiskenin siniflarina ve sinif sayisina erismek
+    kat_df.method.unique()
+    kat_df["method"].value_counts().count()
+    kategorik degiskenin siniflarinin frekansina erismek
+    kat_df["method"].value_counts()
+    df["method"].value_counts().plot.barh()
+    --------------------------------------------------
+    surekli degisken ozetleri
+    df_num = df.select_dtypes(include = ["float", "int64"])
+    df_num.head()
+    df_num.describe().T
+    df_num["distance"].describe()
+    --------------------------------------------------
+
+*** Dagilim Grafikleri
+
+    --------------------------------------------------
+    Barplot
+    --------------------------------------------------
+
+    Sutun grafikler, elimizdeki kategorik degiskenleri gorsellestirmek icin kullanilir.
+
+    import seaborn as sns
+    diamonds = sns.load_dataset("diamonds")
+    df = diamonds.copy()
+    df.head()
+    
+    Veri Setine Hizli Bakis
+    
+    df.info
+    df.describe().T
+
+    df["cut"].value_counts()
+    df["color"].value_counts()
+
+    Bu listedeki kategorilerdeki degerler nominal degil ordinal durumda. O yuzden bunlari kotuden iyiye ya da kucukten buyuge 
+    gore siralama islemi yapmaliyiz.
+
+    Ordinal Tanimlama
+    
+    from pandas.api.types import CategoricalDtype
+    df.cut = df.cut.astype(CategoricalDtype(ordered = True))
+    df.cut.head(1)
+
+    bu islem sonrasinda, cut kategorisi sirali bir hale gelecektir fakat bu bizim istedigimiz ya da veri setinin hikayesine
+    uygun olmayan bir silama olabilir. sistem kendi belirledigi bir siralama atiyor.
+
+    cut_kategoriler = ["Fair", "Good", "Very Good", "Premium", "Ideal"]
+    df.cut = df.cut.astype(CategoricalDtype(categories = cut_kategoriler, ordered = True))
+    df.cut.head(1)
+
+    Barplot Grafigi Olusturma
+
+    pandas
+    df["cut"].value_counts().plot.barh()
+    df["cut"].value_counts().plot.barh();
+    df["cut"].value_counts().plot.barh().set_title("Cut Degiskeninin Sinif Frekanslari");
+    (df["cut"]
+      .value_counts()
+      .plot.barh()
+      .set_title("Cut Degiskeninin Sinif Frekanslari"));
+
+    seaborn
+    sns.barplot(x = "cut", y = df.cut.index, data = df);
+    sns.barplot(y = "cut", x = df.cut.index, data = df);
+
+    Sutun Grafik Caprazlamalar
+
+    Veri seti icersinde yer alan degiskenlerin birlikte degerlendirilmesi; 
+    Kirilimlari goz onunde bulundurmak;
+    Degiskenlerin etkilerinin birlikte degerlendirilmesi;
+
+    import seaborn as sns
+    from pandas.api.types import CategoricalDtype
+    diamonds = sns.load_dataset("diamonds")
+    df = diamonds.copy()
+    cut_kategoriler = ["Fair", "Good", "Very Good", "Premium", "Ideal"]
+    df.cut = df.cut.astype(CategoricalDtype(categories = cut_kategoriler, ordered = True))
+    df.head()
+
+    sns.catplot(x = "cut", y = "price", data = df);
+    sns.barplot(x = "cut", y = "price", hue = "color", data = df);
+
+    plotlama islemlerinine hue eklenirse, yani boyutlar arasi karsilastirma eklenirse, y ekseni bozulmus giri gorunebilir.
+    fakat sistem grafik anlamsiz gorunmesin diye, ortalamalari alip, degerleri bize gosterir.
+    
+    --------------------------------------------------
+
+    --------------------------------------------------
+    Histogram ve Yogunluk Grafiginin Olusturulmasi
+    --------------------------------------------------
+
+    import seaborn as sns
+    diamonds = sns.load_dataset("diamonds")
+    df = diamonds.copy()
+    df.head()
+
+    histogram
+
+    bins attribute tundaki deger yukseldikce, grafigin ayrintisi o kadar cok artiyor.
+
+    sns.distplot(df.price, kde = False);
+    sns.distplot(df.price, bins = 100, kde = False);
+    sns.distplot(df.price, bins = 1000, kde = False);
+    sns.distplot(df.price, bins = 10, kde = False);
+
+    yogunluk
+    
+    sns.distplot(df.price);
+    sns.distplot(df.price, hist = False);
+    sns.kdeplot(df.price, shade = True)
+
+    caprazlamalar
+
+    import seaborn as sns
+    diamonds = sns.load_dataset("diamonds")
+    df = diamonds.copy()
+    df.head()
+
+    (sns
+      .FacetGrid(
+        df,
+        hue = "cut",
+        height = 5,
+        xlim = (0, 10000))
+      .map(sns.kdeplot, "price", shade = True)
+      .add_legend()
+    );
+
+    sns.catplot(x = "cut", y = "price", hue = "color", kind = "point", data = df);
+
+    makine ogrenmesinde amacimiz hedefledigimiz, 
+      bagimli degiskende varolan bilgiyi, 
+      var olan degisimi farkli degiskenlerce aciklamaya calismamizdir.
+    bu degisimi farkli degiskenlerce aciklamaya calismak amacinin en buyuk hedefi, 
+     veri setinin icerisindeki hedef degisken hedefi ile degiskenliklerin bulunmaya calisilmasidir.
+
+    --------------------------------------------------
+
+    --------------------------------------------------
+    Boxplot
+    --------------------------------------------------
+
+    import seaborn as sns
+    tips = sns.load_dataset("tips")
+    df = tips.copy()
+    df.head()
+
+    df.describe().T
+
+    df["sex"].value_counts()
+    df["smoker"].value_counts()
+    df["day"].value_counts()
+    df["time"].value_counts()
+
+    ozellikle, veri seti icindeki bir degiskenin aykiriliklarini gozlemlemek icin kullanabilecegimiz bir gorsellestirme tipi.
+
+    sns.boxplot(x = df["total_bill"]);
+    sns.boxplot(x = df["total_bill"], orient = "v");
+
+    caprazlamalar
+    
+    hangi gunler daha fazla kazaniyoruz?
+    sns.boxplot(x = "day", y = "total_bill", data = df)
+
+    sabah mi aksam mi daha cok kazaniyoruz?
+    sns.boxplot(x = "time", y = "total_bill", data = df)
+
+    kisi sayisi kazanc iliskisi
+    sns.boxplot(x = "size", y = "total_bill", data = df)
+
+    sns.boxplot(x = "size", y = "tip", data = df)
+    sns.boxplot(x = "day", y = "total_bill", hue = "sex", data = df)
+
+    --------------------------------------------------
+
+    --------------------------------------------------
+    Violin
+    --------------------------------------------------
+
+    boxplot benzeri veriler veren bir gorsellestirme turudur.
+
+    sns.catplot(y = "total_bill", kind = "violin", data = df)
+
+    caprazlamalar
+
+    sns.catplot(x = "day", y = "total_bill", kind = "violin", data = df)
+    sns.catplot(x = "day", y = "total_bill", hue = "sex", kind = "violin", data = df)
+
+    --------------------------------------------------     
+
+    --------------------------------------------------     
+    Korelasyon Grafikleri
+    --------------------------------------------------     
+
+    Korelasyon: Degiskenler arasindaki iliskiyi ifade eden istatistiksel bir terimdir.
+    Ornek olarak iki degisken oldugunda,
+      bu degiskenlerin iliskisi siz konusu oldugunda, 
+      bu iliski incelendiginde, 
+      buna korelasyon adi verilir.
+    
+    Scatterplot
+    
+    Sayisal degerler arasindaki iliskiyi gosterir.
+
+    import seaborn as sns
+    tips = sns.load_dataset("tips")
+    df = tips.copy()
+    df.head()
+    
+    sns.scatterplot(x = "total_bill", y = "tip", data = df);
+
+    caprazlamalar
+
+    sns.scatterplot(x = "total_bill", y = "tip", hue = "time", data = df);
+    sns.scatterplot(x = "total_bill", y = "tip", hue = "time", style = "time", data = df);
+    sns.scatterplot(x = "total_bill", y = "tip", hue = "day", style = "time", data = df);
+    sns.scatterplot(x = "total_bill", y = "tip", size = "size", data = df);
+    sns.scatterplot(x = "total_bill", y = "tip", hue = "size", size = "size", data = df);
+
+    dogrusal iliskinin gosterilmesi
+
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+
+    tips = sns.load_dataset("tips")
+    df = tips.copy()
+    df.head()
+
+    sns.lmplot(x = "total_bill", y = "tip", data = df);
+    sns.lmplot(x = "total_bill", y = "tip", hue = "smoker", data = df);
+    sns.lmplot(x = "total_bill", y = "tip", hue = "smoker", col = "time", data = df);
+    sns.lmplot(x = "total_bill", y = "tip", hue = "smoker", col = "time", row = "sex", data = df);
+
+    scatterplot matrisi
+
+    import seaborn as sns
+    iris = sns.load_dataset("iris")
+    df = iris.copy()
+    df.head()
+    
+    df.dtypes
+    df.shape
+
+    sns.pairplot(df);
+
+    veri seti icersinde yer alan dagilimlari gosteriyor
+    eksenlerden yapilacak kesistirmeler ile degiskenlerin arasindaki iliskinin sunulmasi
+    eger scatterplot gorsellerinde, eger olusturulmus olan grafik bir toz bulutu seklinde ise ve ya yapisal bir formu yoksa,
+      bu, o iki degisken arasinda bir iliski olmadigi anlamina gelir.
+    olusturulan scatterplor icerisinde, gozlem noktalari incelendiginde, bunlar eger birbirinden farkli koselerde kumeleniyorsa, 
+      bu durumda, caprazlama durumundan kaynakli olan, cparazlama durumu ile gozlemleyebilecek oldugumuz, olusan bu yapilari,
+      ifade eden bazi alt gruplar vardir. bunlarin goz onunde bulundurulmasi gerekir.
+
+    sns.pairplot(df, hue = "species");
+    sns.pairplot(df, hue = "species", markers = ["o", "s", "d"]);
+    sns.pairplot(df, kind = "reg");
+    sns.pairplot(df, kind = "reg", hue = "species");
+    
+    --------------------------------------------------     
+
+    --------------------------------------------------
+    Heap Map (Isi Haritasi)
+    --------------------------------------------------
+
+    Elimizdeki degiskenleri, biraz daha yapisal anlamda, daha genis perspektiften gormek istedigimizde kullanilabilecek olan
+      grafik gorsellestirme tekniklerinden birisidir.
+    Uzun vadeli verilerde, yani icerisinde zaman serisi verileri oldugunda, yani yil ve ay gibi degiskenler oldugunda,
+      bu donemlere karsilik gozlemlenebilecek olan bazi sayisal degisken degerleri oldugunda, ya da
+      bunun disinda daha buyuk olcekli, belirli periyotlarla tekrar eden olaylari gormek istedigimizde bize guzel
+      grafikler sunan bir grafiktir.
+    Sadece zamansal baglamda degil, eger elimizde cok sinifli bir kategorik degisken ve bunu belirli bir sayisal degisken
+      acisindan gorsellestirme ihtiyacimiz varsa kullanabilecegimiz bir gorsellestirme teknigidir.
+
+    import seaborn as sns
+    flights = sns.load_dataset("flights")
+    df = flights.copy()
+    df.head()
+
+    df.shape
+
+    df["passengers"].describe()
+    
+    df = df.pivot("month", "year", "passengers")
+    sns.heatmap(df);
+    sns.heatmap(df, annot = True, fmt = "d");
+    sns.heatmap(df, annot = True, fmt = "d", linewidths = .5);
+    sns.heatmap(df, annot = True, fmt = "d", linewidths = .5, cbar = False);
+
+    --------------------------------------------------
+
+    --------------------------------------------------
+    Cizgi Grafik
+    --------------------------------------------------
+    
+    Gorece, digerlerine gore daha zor problemlerde kullanacak oldugumuz bir veri gorsellestirme turu.
+    Zamana bagli degiskenlerin oldugu veri setlerinde ve nesnelerin interneti gibi senaryolarda makinalarin urettigi verileri
+      gorsellestirmek icin kullanabilecegimiz bir gorsellestirme teknigi.
+
+    veri setinin incelenmesi
+
+    import seaborn as sns
+    fmri = sns.load_dataset("fmri")
+    df = fmri.copy()
+    df.head()
+
+    df.shape
+    df["timepoint"].describe()
+
+    df.groupby("timepoint")["signal"].count()
+    df.groupby("signal")["timepoint"].count()
+    df.groupby("signal").count()
+    df.groupby("timepoint")["signal"].describe()
+
+    cizgi grafik ve caprazlama
+
+    sns.lineplot(x = "timepoint", y = "signal", data = df)
+
+    grafikteki cizgiler ortalama degerlere karsilik geliyor, etrafinda gorulen ifadelerde standart sapmayi gosteriyor.
+
+    sns.lineplot(x = "timepoint", y = "signal", hue = "event", data = df)
+
+    sns.lineplot(x = "timepoint", y = "signal", hue = "event", style = "event", data = df)
+
+    sns.lineplot(x       = "timepoint", 
+                 y       = "signal", 
+                 hue     = "event", 
+		 style   = "event",
+		 markers = True,
+		 dashes  = False,
+		 data    = df);
+
+    sns.lineplot(x     = "timepoint", 
+                 y     = "signal", 
+		 hue   = "region", 
+		 style = "event",
+		 data  = df);
+
+    --------------------------------------------------
+
+    --------------------------------------------------
+    Basit Zaman Serisi Grafigi
+    --------------------------------------------------
+
+    !pip install pandas_datareader
+    import pandas_datareader as pr
+
+    df = pr.get_data_yahoo("AAPL", start = "2016-01-01", end = "2019-08-25")
+    df.head()
+
+    df.shape
+
+    kapanis = df["Close"]
+    kapanis.head()
+
+    kapanis.plot();
+
+    kapanis.index
+    kapanis.index = pd.DatetimeIndex(kapanis.index)
+    kapanis.head()
+
+    kapanis.plot();
+    
+    --------------------------------------------------
+
+* Veri Bilimi icin Istatistik
+   - Ornek Teorisi
+   - Betimsel Istatistikler
+   - Guven Araliklari
+   - Olasilik Dagilimlari
+   - Hipotez Testleri
+   - Varyans Analizi
+   - Korelasyon Analizi
+
