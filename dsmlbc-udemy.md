@@ -926,4 +926,59 @@ Bir ML projesine yatirim yapilmis. Urettigi tahminler neticesinde olusan gelir i
 $H_0: \mu_1 = \mu_2$  
 $H_1: \mu_1 \neq \mu_2$ 
 
+
+## **MACHINE LEARNING**
+
+**Makine Ogrenmesi Nedir?**  
+Bilgisayarlarin insanlara benzer sekilde ogrenmesini saglamak maksadi ile cesitli algoritma ve tekniklerin gelistirilmesi icin calisilan bilimsel calisma alanidir.
+
+### **Terminoloji**
+
+- Bagimli Degisken
+- Bagimsiz Degisken
+- Ogrenme Turleri
+  - Gozetimli Ogrenme
+  - Gozetimsiz Ogrenme
+  - Yari Gozetimli Ogrenme
+- Problem Turu:
+  - Regresyon
+  - Siniflandirma
+- Degisken Turleri:
+  - Sayisal Degiskenler (nicel, kantitatif) (Surekli Degiskenler)
+  - Kategorik Degiskenler (nitel, kalitatif)
+- Olcek Turleri:
+  - Sayisal Degiskenler Icin:
+	- Aralik
+	- Oran
+  - Kategorik Degiskenler Icin:
+	- Nominal
+	- Ordinal
+- Test-Train Ayrimi
+  - Orijinal Veri Seti
+  - Egitim Seti
+  - Test Seti
+- Degisken Muhendisligi (Feature Engineering)
+- Degisken Secimi (Variable Selection)
+- Model Secimi:
+  1. Olusabilecek degisken kombinasyonlari ile olusturulan modeller arasindan en iyi modelin secilmesi
+  2. Kurulan birbirinden farkli modeller arasindan model secimi
+- Model Neye Gore Secilir:
+  - Regresyon icin aciklanabilirlik orani ve RMSE bezeri bir deger.
+  - Siniflandirma icin dogru siniflandirma orani benzeri bir deger.
+- Asiri Ogrenme (Overfitting)
+- Deterministik Modeller vs Stokastik Modeller
+  - Deterministik: Degiskenler arasinda kesin bir ilgi oldugunu varsayan modellere deterministik model denir.
+  - Stokastik: Hedefimizin rassal olarak degistigi modellerdir.
+- Dogrusal Modeller ve Dogrusal Olmayan Modeller
+
+
+
+### **Model Dogrulama Yontemleri**
+
+Modellerin urettigi sonuclarin dogru degerlendirilmesi calismalari.
+
+Bu yontemlerin kullanilma gerekceleri, model basari sonuclarinin daha dogru degerlendirilmesi cabasidir.
+
+#### **Holdout Yontemi**
+
 # TODO BURADAN ITIBAREN NOT ALAMADIM. NOTLARI TAMAMLA... (VIDEO 211 - Nonparametrik Bagimsiz Iki Orneklem Testi)

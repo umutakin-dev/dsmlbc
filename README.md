@@ -1,10 +1,12 @@
-# DSMLBC - Data Science and Machine Learning Bootcamp 2020
+# DSMLBC - Data Science and Machine Learning Bootcamp
 
 ## WEEK-01
 
-- Python
+- Veri Okuryazarligi
+- Python Programlama
 
 ## WEEK-02
 
-- Numpy
-- Pandas
+- Veri Manipulasyonu
+  - NumPy
+  - Pandas

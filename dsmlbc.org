@@ -1,11 +1,11 @@
 * WEEK-01
 
-** ODEVLER [3/6]
+** ODEVLER [5/6]
 
-   - [ ] Aşağıdaki adreste yer alan "Veri Bilimi ve Yapay Zekaya Giriş" sınavı soruları çözülecek sınav sonuçları teams grubunda paylaşılacak.
+   - [X] Aşağıdaki adreste yer alan "Veri Bilimi ve Yapay Zekaya Giriş" sınavı soruları çözülecek sınav sonuçları teams grubunda paylaşılacak.
          https://gelecegiyazanlar.turkcell.com.tr/konu/veri-bilimi-ve-yapay-zekaya-giris/egitim/101
 
-   - [ ] Aşağıdaki adreste yer alan "Veri Okuryazarlığı" sınavı soruları çözülecek ve sınav sonuçları teams grubundan paylaşılacak:
+   - [X] Aşağıdaki adreste yer alan "Veri Okuryazarlığı" sınavı soruları çözülecek ve sınav sonuçları teams grubundan paylaşılacak:
          https://gelecegiyazanlar.turkcell.com.tr/konu/veri-okuryazarligi
 
    - [ ] TÜİK-OECD data yorumlama (isteğe bağlı)
@@ -26,3 +26,182 @@
     - [X] Kullanıcıdan bilgi alma (input) ve çarpma fonksiyonunu konsol'dan yazdırmak (seçmeli)
 
     - [X] Udemy'den veri yapıları bölümünde yer alan setler bölümü izlenecek.
+
+* WEEK-02
+
+** ODEVLER [5/5]
+
+   - [X] Kullanıcı etkileşimli basit bir hesap makinesi python scripti yazınız.
+
+     Detaylar: 
+     4 matematiksel işlem için 4 ayrı fonksiyon yazınız. 
+     Kullanıcıdan input ile hangi işlemi yapmak istediğini alınız. (Toplama: 1, Çıkarma: 2, Çarpma: 3, Bölme:4) 
+     if yapısı ile inputtan gelen integer’a göre hangi fonksiyonun kullanılacağının seçimini yapınız. 
+     Yani “if == 1 ise toplama fonksiyonunu çalıştır” gibi. 
+     4 fonksiyon içinde bilgileri yine kullanıcıdan alınız. 
+     Scriptin adını calculate.py yapınız ve konsoldan çalıştırınız. 
+     Ekran görüntüsünü grubunuzdan paylaşınız
+
+   - [X] 2 tane string metodu, 2 tane liste metodu ve 1 tane döngü barındıran argumansız, 
+         return özelliği olan ve herhangi bir işlemimizin sonucunu return edecek bir fonksiyon yazınız.
+
+   - [X] Geleceği yazanlar Python 301 bölümünün sorularını çözünüz.
+
+   - [X] Pandas bölümünü izleyiniz.
+
+   - [X] (İsteğe Bağlı) Pandas’a kadar olan bölümlerin videolarını bitiriniz.
+
+* WEEK-03
+
+** NOTLAR
+
+*** Apriori Algoritmasi
+
+    Birliktelik Analizi
+    
+    - **Destek (Support)**
+      
+      Support(X, Y) = Freq(X,Y) / N
+
+      X ve Y nin birlikte gorulme olasiligi.
+      
+      x: urun
+      y: urun
+      n: toplam alisveris
+      
+    - **Guven (Confidence)**
+
+      Confidence(X,Y) = Freq(X,Y)/Freq(X)
+
+      X i alanlarin %de su kadari Y yi de alacak.
+
+    - **Lift**
+
+      Lift = Support(X,Y) / ( Support(X) * Support(Y) )
+
+      Bir sepette X urunu bulundugu zaman, Y urunun satin alinma olasiligi o kadar artiyor.
+
+    - Esik Deger
+
+      Support ve confidende i dikkate alarak, karar almadan once bir esik deger belirleyebiliriz.
+
+    - Kullanimi
+
+      Kayitlar frekanslarina gore listelenir.
+      Bir esik deger belirlenir ve esik degeri gecemeyen kayitlar listeden silinir.
+      Bu sefer kayitlarin ciftli kombinasyonlari alinir ve bunlar frekanslarina gore listelenir ve esik degere gore eleme yapilir.
+      Daha fazla kombinasyon uretemeyesiye kadar calismaya ve  esik frekansa gore elemelere devam edilir.
+      Final tablosu olusturulup, frekans, support ve confidence ve lift uzerinden yorumlanir.
+      
+
+*** RFM Analizi
+
+    RFM (Market Research)
+
+    Recency:         How recently did the customer purchase?
+    Frequency:       How often do they purchase?
+    Monetary Value:  How much do they spend?
+
+    - **Recency:**
+      
+      Bugunun tarihi - son satin alma
+      Musterinin "sicakligi"
+      Musterinin son temasindan beri gecen sure
+
+    - **Frequency:**
+
+      Siklik
+      Toplam satin alma sayisi
+      ( Su kadar sayida alisveris yapti )
+
+    - **Monetary Value:**
+
+      Musterinin toplam yaptigi harcama
+      ( Toplam su kadar para harcadi )
+
+    - **Recency/Frequency** Tablosu
+
+      |---------------------+------+------|
+      | Status              | X    | Y    |
+      |---------------------+------+------|
+      | Cant Lose Them      | 1, 2 | 5    |
+      | At Rist             | 1, 2 | 3, 4 |
+      | Hibernating         | 1, 2 | 1, 2 |
+      | Loyal Customers     | 3, 4 | 4, 5 |
+      | **Need Attention**  | 3    | 3    |
+      | About to Sleep      | 3    | 1, 2 |
+      | Potential Loyalists | 4, 5 | 2, 3 |
+      | Promising           | 4    | 1    |
+      | Champions           | 5    | 4, 5 |
+      | New Customers       | 5    | 5    |
+      |---------------------+------+------|
+      
+      churn: terk etmek
+      
+
+** ODEVLER [2/5]
+
+   - [ ] Aşağıdaki linkte yer alan veri setine birliktelik analizini uygulayınız.
+         
+         Veri seti: https://www.kaggle.com/shazadudwadia/supermarket   
+         Referans notebook: https://www.kaggle.com/mariekaram/apriori-association-rule  
+
+         Üreteceğiniz kurallardan 3 tanesini support ve confidence açısından yorumlayınız.  
+
+         Herhangi bir kural için aksiyon fikri öneriniz. 
+
+   - [X] Kasım Bey sizinle ders notları bölümünde salı günü yapılacak uygulamaları paylaşacak.  
+         
+         Paylaşım sonrası buradan bilgi verecek
+
+   - [X] Kaggle, Linkedin, github.com ve medium.com’da hesap oluşturulacak 
+
+         Bizim sosyal medyalarımız bu platformlar. Bu platformlarda hesaplarımızı oluşturalım.
+
+   - [ ] (İsteğe bağlı) Aşağıdaki adresteki pandas alıştırmalarını yapınız:
+
+        https://pynative.com/python-pandas-exercise/
+
+   - [ ] (İsteğe Bağlı) Geleceği Yazanlar Veri Manipulasyonu 101 ve 201 sorularını çözünüz.
+
+* WEEK-04
+
+** NOTLAR
+
+** ODEVLER [/]
+
+- [ ] 1. PROJE_1: Birliktelik Analizi 
+
+      Aşağıdaki linkte yer alan veri setine birliktelik analizini uygulayınız.
+
+      Veri seti: https://www.kaggle.com/shazadudwadia/supermarket
+
+      Referans notebook: https://www.kaggle.com/mariekaram/apriori-association-rule
+
+      Üreteceğiniz kurallardan 3 tanesini support ve confidence açısından yorumlayınız.
+
+      Herhangi bir kural için aksiyon fikri öneriniz.
+
+- [ ] 2. PROJE_2: RFM ile Müşteri Segmentasyonu
+
+      Teams ders notları bölümünde yer alan "customer_segmentation" notebook'unu indiriniz. 
+      Bu notebook'u referans alarak RFM ile Müşteri Segmentasyonu yapınız.
+
+      Veri seti nerede? 
+
+      Aşağıdaki adreste yer alan "online_retail_II.xlsx" dosyasını indiriniz.
+
+      Referans notebook'ta yer alan veri okuma kodunu kullanarak veriyi okutunuz fakat farklı olarak ikinci sheet'i seçiniz. 
+
+      Kod:
+
+      df_2010_2011 = pd.read_excel("online_retail.xlsx", sheet_name = "Year 2010-2011")
+
+      Veriyi okuduktan sonra referans notebook'ta yer alan benzer uygulamaları yapınız. 
+
+      Müşterileri segmentlere ayırdıktan sonra 3 segment seçerek bu 3 segmenti hem aksiyon kararları açısından hem de segmentlerin yapısı açısından (ortalama RFM değerleri açısından) yorumlayınız.
+
+      "Need Attention" sınıfına ait customer ID'leri seçerek excel çıktısını alınız.
+
+      RFM Verisi: https://archive.ics.uci.edu/ml/machine-learning-databases/00502/
+  
